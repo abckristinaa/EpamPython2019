@@ -34,15 +34,14 @@ P.S. За незакрытый файловый дескриптор - кара�
 """
 
 # read the file dna.fasta
-dna = open(r'files/dna.fasta')
+dna = open('files/dna.fasta')
 
 
 def translate_from_dna_to_rna(dna):
-    # writes rna chains for each gene in file
-    # and returns a list of rna chains
+    """writes rna chains for each gene in file and returns a list of rna chains"""
     rna = []
     dna.seek(0)
-    with open(r'files/2_rna.txt', 'w') as wf:
+    with open('files/2_rna.txt', 'w') as wf:
         for line in dna:
             if line[0] != ">":
                 s = line.replace("T", "U").rstrip()
@@ -51,15 +50,15 @@ def translate_from_dna_to_rna(dna):
             else:
                 wf.write(line)
                 rna.append("sep")
+    dna.close()
     rna = "".join(rna).split("sep")[1:]
     return rna
 
 
 def count_nucleotides(dna):
-    # creates a file with number of repetitions
-    # for each nucleotides in gene
+    """creates a file with number of repetitions for each nucleotides in gene"""
     storage = {}
-    file_out = r'files/1_count_nucl.txt'
+    file_out = 'files/1_count_nucl.txt'
     with open(file_out, 'w') as wf:
         for index, line in enumerate(dna):
             if line[0] == ">":
@@ -75,19 +74,15 @@ def count_nucleotides(dna):
 
 
 def translate_rna_to_protein(rna):
-
-    # convert codon table to a dictionary:
+    """reverse rna chains, divide into triplets and returns a list of proteins"""
     keys, values = [], []
-    with open(r'files/rna_codon_table.txt') as rf:
+    with open('files/rna_codon_table.txt') as rf:
         for line in rf:
             for index, k in enumerate(line.rstrip().split()):
                 keys.append(k) if index % 2 == 0 else values.append(k)
     dict_table = dict(zip(keys, values))
 
-    # reverse rna chains,
-    # divide the chains into triplets and convert to protein
-    # returns a list of proteins
-    with open(r'files/3_protein.txt', 'w') as wf:
+    with open('files/3_protein.txt', 'w') as wf:
         protein = []
         for chain in rna:
             chain = chain[::-1]
@@ -102,5 +97,4 @@ def translate_rna_to_protein(rna):
 
 count_nucleotides(dna)
 rna = translate_from_dna_to_rna(dna)
-dna.close()
 translate_rna_to_protein(rna)
