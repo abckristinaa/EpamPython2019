@@ -54,7 +54,7 @@ def translate_from_dna_to_rna(dna):
     rna = "".join(rna).split("sep")[1:]
     return rna
 
-
+ 
 def count_nucleotides(dna):
     """creates a file with number of repetitions for each nucleotides in gene"""
     storage = {}
