@@ -1,0 +1,46 @@
+{
+    "statistics": {
+        "wine": {
+            "Riesling": {
+                "average_price": 32,
+                "min_price": 5,
+                "max_price": 775,
+                "most_common_region": "Germany",
+                "most_common_country": "Germany",
+                "average_score": 31
+            },
+            "Merlot": {
+                "average_price": 29,
+                "min_price": 4,
+                "max_price": 625,
+                "most_common_region": "Chile",
+                "most_common_country": "US",
+                "average_score": 28
+            },
+            "Tempranillo": {
+                "average_price": 31,
+                "min_price": 4,
+                "max_price": 600,
+                "most_common_region": "Northern Spain",
+                "most_common_country": "Spain",
+                "average_score": 30
+            },
+            "Red Blend": {
+                "average_price": 36,
+                "min_price": 5,
+                "max_price": 500,
+                "most_common_region": "Chile",
+                "most_common_country": "Italy",
+                "average_score": 34
+            },
+            "Gewürztraminer": {
+                "average_price": 26,
+                "min_price": 6,
+                "max_price": 197,
+                "most_common_region": "Alsace",
+                "most_common_country": "France",
+                "average_score": 24
+            }
+        }
+    }
+}
