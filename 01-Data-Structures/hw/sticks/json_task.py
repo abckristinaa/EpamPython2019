@@ -51,7 +51,6 @@ def get_statistics_for_chosen(data, wines):
     for wine in selected:
         all_prices = [data['price'] for data in selected[wine]
                       if data['price'] is not None]
-        print(all_prices)
         all_scores = [data['points'] for data in selected[wine]]
 
         country, province = {}, {}
