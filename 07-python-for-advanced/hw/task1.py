@@ -62,12 +62,3 @@ class SiamObj(metaclass=Meta):
     def __init__(self, *arg, a=None):
         self.arg = arg
         self.a = a
-
-
-unit1 = SiamObj('1', '1', a=3)
-unit2 = SiamObj('1', '1', a=3)
-unit3 = SiamObj('1', '1', a=1)
-
-pool = unit3.pool
-
-del unit3
