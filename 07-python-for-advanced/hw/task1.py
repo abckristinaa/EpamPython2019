@@ -25,11 +25,12 @@ True
 1
 
 """
+from weakref import WeakKeyDictionary
 
 
 class Meta(type):
     """ Adds some extra method and attributes to the SiamObj class."""
-    _instances = []
+    _instances = WeakKeyDictionary()
 
     def connect(cls, *arg):
         if cls._instances:
@@ -46,7 +47,7 @@ class Meta(type):
 
         obj = type.__call__(cls, *arg, **kwargs)
         if not cls._instances:
-            cls._instances.append(obj)
+            cls._instances[obj] = None
             return obj
         else:
             for i in cls._instances:
@@ -54,7 +55,7 @@ class Meta(type):
                     obj = i
                     return obj
             else:
-                cls._instances.append(obj)
+                cls._instances[obj] = None
                 return obj
 
 
