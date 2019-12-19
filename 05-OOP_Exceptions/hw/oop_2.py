@@ -120,7 +120,7 @@ class Teacher(Person):
 
     @classmethod
     def reset_results(cls, homework=None):
-        if homework:
+        if homework and homework in cls.homework_done:
             del cls.homework_done[homework]
         else:
             cls.homework_done = defaultdict(set)
