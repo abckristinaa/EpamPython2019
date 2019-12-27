@@ -14,7 +14,7 @@
 >>> unit1 is unit2
 True
 >>> unit3 = SiamObj('2', '2', a=1)
->>> unit3.connect('1', '2', a=1).a = 2   #
+>>> unit3.connect('1', '2', 1).a = 2
 >>> unit2.a == 2
 True
 >>> pool = unit3.pool
@@ -24,8 +24,10 @@ True
 >>> print(len(pool))
 1
 
+
 """
 from weakref import WeakKeyDictionary
+from functools import reduce
 
 
 class Meta(type):
@@ -34,14 +36,24 @@ class Meta(type):
 
     @classmethod
     def connect(cls, *arg, **kwargs):
-        if cls._instances:
-            for obj in cls._instances:
-                param = arg + tuple(kwargs.items())
-                if param == tuple([i for i in obj.__dict__['arg']]) + \
-                        tuple(obj.__dict__['kwargs'].items()):
+        for obj in cls._instances:
+            keys = list(obj.__dict__.keys())
+            if keys:
+                temp, obj_args_values = [], []
+                [temp.append(obj.__dict__[key]) for key in keys]
+                for i in temp:
+                    if type(i) == dict:
+                        obj_args_values.append(tuple(i.values()))
+                    else:
+                        obj_args_values.append(i)
+                param = arg + tuple(kwargs.values())
+                obj_param = reduce(lambda x, y: x+y, obj_args_values)
+                if param == obj_param:
                     return obj
+            elif not arg and not kwargs:
+                return obj
             else:
-                raise AttributeError(f"The given attributes not found.")
+                raise AttributeError('No objects with the given attributes')
 
     def __call__(cls, *arg, **kwargs):
         setattr(cls, 'connect', cls.connect)
