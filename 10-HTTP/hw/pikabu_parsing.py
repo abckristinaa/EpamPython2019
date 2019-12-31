@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 URL = 'https://pikabu.ru'
 cookie = input('Введите куки: ')
 HEADERS = {'Cookie': cookie,
-          'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) '
+           'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) '
                         'Gecko/20100101 Firefox/71.0'}
 
 
@@ -21,7 +21,7 @@ def get_100_posts():
             soup = BeautifulSoup(get_page.text, "html.parser")
             all_posts.extend(soup.findAll('article')[:9])
             page += 1
-        return all_posts[:99]
+        return all_posts[:100]
 
 
 def count_tags(posts, tags_container=[]):
