@@ -108,6 +108,29 @@ def client_code(documents_handler):
     print(documents_handler.get_documents(document_ids[1]))
 
 
+class Adapter(DocumentsHandler):
+    def __init__(self, service):
+        super().__init__(service)
+
+    def upload_documents(self, documents):
+        """
+            Метод конвертирует документы для отгрузки в формат .json и передает
+            их в обычный загрузчик.
+        """
+        if not isinstance(documents, list):
+            documents = [documents]
+
+        documents = [i.replace('.xml', '.json') for i in documents
+                     if not i.endswith('.json')]
+
+        return self._service.upload_documents(documents)
+
+    def get_documents(self, document_id):
+        """ Метод конвертирует возвращенные документы в формат .xml. """
+        stored_documents = self._service.get_documents(document_id)
+        return [i.replace('.json', '.xml') for i in stored_documents]
+
+
 if __name__ == "__main__":
     class App:
         pass  # Упрощенная реализация сложного приложения
@@ -115,5 +138,5 @@ if __name__ == "__main__":
     app = App()
     app.documents_handler = DocumentsHandler(StoreService())
     # Реализуйте класс Adapter и раскомментируйте строку ниже
-    # app.documents_handler = Adapter(app.documents_handler)
+    app.documents_handler = Adapter(app.documents_handler)
     client_code(app.documents_handler)

@@ -49,3 +49,71 @@ Dear John, there is new playlist on 'All about dogs' channel: 'Dogs nutrition'
 Dear Erica, there is new playlist on 'All about dogs' channel: 'Dogs nutrition'
 
 """
+from abc import ABC, abstractmethod
+
+
+class Observer(ABC):
+    """ Base abstract class for subscribers. """
+
+    @abstractmethod
+    def update(self, message:str):
+        pass
+
+
+class MyTubeUser(Observer):
+    """ Defines MyTubeUser methods. """
+    def __init__(self, name: str):
+        self.name = name
+
+    def update(self, message: str):
+        print(f'Dear {self.name}, {message}')
+
+
+class Observable:
+    """ Base class. """
+    def __init__(self):
+        self.observers = []
+
+    def subscribe(self, user: MyTubeUser):
+        self.observers.append(user)
+
+    def unsubscribe(self, user: MyTubeUser):
+        if user in self.observers:
+            self.observers.remove(user)
+
+
+class MyTubeChannel(Observable):
+    def __init__(self, channel_name: str, chanel_owner: MyTubeUser):
+        super().__init__()
+        self.name = channel_name
+        self.owner = chanel_owner
+
+    def publish_video(self, video: str):
+        msg = f"there is new video on '{self.name}' channel: '{video}'"
+        for observer in self.observers:
+            observer.update(msg)
+
+    def publish_playlist(self, playlists: dict):
+        for plist in playlists.keys():
+            for user in self.observers:
+                msg = f"there is new playlist on '{self.name}' channel: '{plist}'"
+                user.update(msg)
+
+
+if __name__ == "__main__":
+    matt = MyTubeUser('Matt')
+    john = MyTubeUser('John')
+    erica = MyTubeUser('Erica')
+
+    dogs_life = MyTubeChannel('All about dogs', matt)
+    dogs_life.subscribe(john)
+    dogs_life.subscribe(erica)
+
+    dogs_nutrition_videos = ['What do dogs eat?',
+                             'Which Pedigree pack to choose?']
+    dogs_nutrition_playlist = {'Dogs nutrition': dogs_nutrition_videos}
+
+    for video in dogs_nutrition_videos:
+        dogs_life.publish_video(video)
+
+    dogs_life.publish_playlist(dogs_nutrition_playlist)
