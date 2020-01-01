@@ -73,7 +73,7 @@ class Fridge:
 
 class EggsHandler(AbstractHandler):
     def handle(self, fridge: Fridge, product='eggs'):
-        if fridge.food[product] <= RECIPE[product]:
+        if fridge.food[product] < RECIPE[product]:
             print(f"To buy: {RECIPE[product] - fridge.food[product]} {product}")
         if self._next_handler:
             return self._next_handler.handle(fridge)
@@ -81,7 +81,7 @@ class EggsHandler(AbstractHandler):
 
 class FlourHandler(AbstractHandler):
     def handle(self, fridge: Fridge, product='flour'):
-        if fridge.food[product] <= RECIPE[product]:
+        if fridge.food[product] < RECIPE[product]:
             print(f"To buy: {RECIPE[product] - fridge.food[product]} {product}")
         if self._next_handler:
             return self._next_handler.handle(fridge)
@@ -89,7 +89,7 @@ class FlourHandler(AbstractHandler):
 
 class MilkHandler(AbstractHandler):
     def handle(self, fridge: Fridge, product='milk'):
-        if fridge.food[product] <= RECIPE[product]:
+        if fridge.food[product] < RECIPE[product]:
             print(f"To buy: {RECIPE[product] - fridge.food[product]} {product}")
         if self._next_handler:
             return self._next_handler.handle(fridge)
@@ -97,7 +97,7 @@ class MilkHandler(AbstractHandler):
 
 class SugarHandler(AbstractHandler):
     def handle(self, fridge: Fridge, product='sugar'):
-        if fridge.food[product] <= RECIPE[product]:
+        if fridge.food[product] < RECIPE[product]:
             print(f"To buy: {RECIPE[product] - fridge.food[product]} {product}")
         if self._next_handler:
             return self._next_handler.handle(fridge)
@@ -105,7 +105,7 @@ class SugarHandler(AbstractHandler):
 
 class SunflowerOilHandler(AbstractHandler):
     def handle(self, fridge: Fridge, product='sunflower_oil'):
-        if fridge.food[product] <= RECIPE[product]:
+        if fridge.food[product] < RECIPE[product]:
             print(f"To buy: {RECIPE[product] - fridge.food[product]} {product}")
         if self._next_handler:
             return self._next_handler.handle(fridge)
@@ -113,7 +113,7 @@ class SunflowerOilHandler(AbstractHandler):
 
 class ButterHandler(AbstractHandler):
     def handle(self, fridge: Fridge, product='butter'):
-        if fridge.food[product] <= RECIPE[product]:
+        if fridge.food[product] < RECIPE[product]:
             print(f"To buy: {RECIPE[product] - fridge.food[product]} {product}")
         if self._next_handler:
             return self._next_handler.handle(fridge)
