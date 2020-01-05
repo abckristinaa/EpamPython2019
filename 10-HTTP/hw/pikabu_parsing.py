@@ -5,7 +5,8 @@ from bs4 import BeautifulSoup
 
 
 URL = 'https://pikabu.ru'
-cookie = input('Введите куки: ')
+cookie = input('Введите куки из просмотренной страницы после совершения '
+               'авторизации (заканчивается на "la=1"): ')
 HEADERS = {'Cookie': cookie,
            'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) '
                         'Gecko/20100101 Firefox/71.0'}
@@ -20,6 +21,9 @@ def get_100_posts():
             get_page = s.get(f'{URL}/new/subs?page={page}', headers=HEADERS)
             soup = BeautifulSoup(get_page.text, "html.parser")
             all_posts.extend(soup.findAll('article')[:9])
+            if not all_posts:
+                print('Полученная страницы не содержит посты')
+                break
             page += 1
         return all_posts[:100]
 
