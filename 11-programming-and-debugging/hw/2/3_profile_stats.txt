@@ -1,0 +1,279 @@
+Fri Jan  3 14:57:29 2020    profile.txt
+
+         5497 function calls (5331 primitive calls) in 0.862 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      131    0.716    0.005    0.716    0.005 {method 'update' of '_hashlib.HASH' objects}
+      263    0.115    0.000    0.115    0.000 {method 'read' of '_io.BufferedReader' objects}
+      132    0.011    0.000    0.844    0.006 script.py:22(get_sha256_hash)
+        1    0.004    0.004    0.004    0.004 {built-in method _imp.create_dynamic}
+    27/25    0.002    0.000    0.002    0.000 {built-in method builtins.__build_class__}
+      132    0.001    0.000    0.001    0.000 {built-in method io.open}
+        2    0.001    0.001    0.001    0.001 {built-in method marshal.loads}
+      188    0.001    0.000    0.001    0.000 /usr/lib/python3.6/posixpath.py:75(join)
+      206    0.001    0.000    0.001    0.000 {built-in method builtins.next}
+   142/36    0.000    0.000    0.002    0.000 /usr/lib/python3.6/os.py:277(walk)
+       39    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+      7/5    0.000    0.000    0.001    0.000 /usr/lib/python3.6/sre_parse.py:470(_parse)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.create_builtin}
+     17/4    0.000    0.000    0.001    0.000 /usr/lib/python3.6/sre_compile.py:64(_compile)
+        1    0.000    0.000    0.851    0.851 script.py:34(main)
+       10    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1233(find_spec)
+       33    0.000    0.000    0.000    0.000 {built-in method posix.scandir}
+       32    0.000    0.000    0.000    0.000 {built-in method posix.lstat}
+      132    0.000    0.000    0.000    0.000 {method 'hexdigest' of '_hashlib.HASH' objects}
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/gettext.py:466(find)
+        9    0.000    0.000    0.000    0.000 /usr/lib/python3.6/gettext.py:205(_expand_lang)
+      333    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+    28/15    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:173(getwidth)
+       77    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:163(__getitem__)
+       10    0.000    0.000    0.003    0.000 /usr/lib/python3.6/re.py:286(_compile)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:430(_validate_bytecode_header)
+       48    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:57(_path_join)
+      408    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/argparse.py:1316(add_argument)
+        2    0.000    0.000    0.000    0.000 {method 'read' of '_io.FileIO' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:830(get_data)
+       48    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:59(<listcomp>)
+        5    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:870(_find_spec)
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/argparse.py:1235(__init__)
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.6/enum.py:803(__and__)
+      6/4    0.000    0.000    0.001    0.000 /usr/lib/python3.6/sre_parse.py:407(_parse_sub)
+      5/2    0.000    0.000    0.011    0.005 <frozen importlib._bootstrap>:966(_find_and_load)
+      189    0.000    0.000    0.000    0.000 /usr/lib/python3.6/posixpath.py:41(_get_sep)
+        4    0.000    0.000    0.002    0.001 /usr/lib/python3.6/sre_compile.py:557(compile)
+        3    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1117(_get_spec)
+       41    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.006    0.006 /usr/lib/python3.6/hashlib.py:54(<module>)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:482(_compile_info)
+      5/2    0.000    0.000    0.010    0.005 <frozen importlib._bootstrap>:651(_load_unlocked)
+       34    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1287(register)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:250(_optimize_charset)
+      241    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+       38    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:232(__next)
+        1    0.000    0.000    0.002    0.002 /usr/lib/python3.6/argparse.py:62(<module>)
+       35    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       44    0.000    0.000    0.000    0.000 /usr/lib/python3.6/enum.py:517(__new__)
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/argparse.py:166(__init__)
+      133    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha256}
+       14    0.000    0.000    0.001    0.000 /usr/lib/python3.6/hashlib.py:116(__get_openssl_constructor)
+      236    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:504(_init_module_attrs)
+      229    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+       44    0.000    0.000    0.000    0.000 /usr/lib/python3.6/enum.py:267(__call__)
+        1    0.000    0.000    0.004    0.004 /usr/lib/python3.6/argparse.py:1613(__init__)
+  159/149    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:318(__exit__)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        4    0.000    0.000    0.001    0.000 /usr/lib/python3.6/sre_parse.py:844(parse)
+        2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap_external>:743(get_code)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.6/genericpath.py:16(exists)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:263(cache_from_source)
+       32    0.000    0.000    0.000    0.000 /usr/lib/python3.6/posixpath.py:168(islink)
+       64    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.6/os.py:664(__getitem__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+       55    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+      100    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       43    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       25    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:171(append)
+       31    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:253(get)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.6/argparse.py:1784(_parse_known_args)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:223(_compile_charset)
+        9    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:388(_simple)
+        6    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.6/argparse.py:1749(parse_known_args)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1373(_add_action)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1542(__init__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:524(spec_from_file_location)
+        9    0.000    0.000    0.000    0.000 /usr/lib/python3.6/locale.py:379(normalize)
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1080(_path_importer_cache)
+        5    0.000    0.000    0.005    0.001 <frozen importlib._bootstrap>:564(module_from_spec)
+      173    0.000    0.000    0.000    0.000 {method 'is_dir' of 'posix.DirEntry' objects}
+        2    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:485(_compile_bytecode)
+       35    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:159(__len__)
+      5/2    0.000    0.000    0.011    0.005 <frozen importlib._bootstrap>:936(_find_and_load_unlocked)
+        8    0.000    0.000    0.001    0.000 /usr/lib/python3.6/hashlib.py:73(__get_builtin_constructor)
+        1    0.000    0.000    0.862    0.862 script.py:12(<module>)
+      8/2    0.000    0.000    0.008    0.004 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        4    0.000    0.000    0.001    0.000 /usr/lib/python3.6/sre_compile.py:542(_code)
+       15    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:75(_path_stat)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1453(_get_optional_kwargs)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2243(_get_values)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.6/argparse.py:2080(_match_arguments_partial)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:589(_format_args)
+       17    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:285(tell)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1831(take_action)
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        5    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:802(__init__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+       17    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:111(__init__)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:342(_escape)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:361(_get_cached)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        3    0.000    0.000    0.000    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:223(__init__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1228(_get_spec)
+       28    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:159(HelpFormatter)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.6/argparse.py:1929(consume_positionals)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1594(ArgumentParser)
+      5/4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:414(_get_literal_prefix)
+        2    0.000    0.000    0.010    0.005 <frozen importlib._bootstrap_external>:672(exec_module)
+       27    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/gettext.py:587(dgettext)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:707(find_spec)
+        4    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/gettext.py:521(translation)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:828(fix_flags)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.6/os.py:742(encode)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1437(_get_positional_kwargs)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1489(_pop_action_class)
+       20    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:248(match)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:369(__init__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:403(cached)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:433(spec_from_loader)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1363(add_argument_group)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:63(_path_split)
+       40    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:539(isstring)
+       12    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:81(groups)
+        1    0.000    0.000    0.004    0.004 <frozen importlib._bootstrap_external>:919(create_module)
+       11    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:847(__exit__)
+      3/1    0.000    0.000    0.862    0.862 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha1}
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1291(_registry_get)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1564(_add_action)
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/argparse.py:2361(_get_formatter)
+        9    0.000    0.000    0.002    0.000 /usr/lib/python3.6/re.py:231(compile)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+       11    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:843(__enter__)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:76(__init__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:311(__enter__)
+       20    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:321(<genexpr>)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:52(_r_long)
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha224}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1493(_get_handler)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2295(_get_value)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:441(_get_charset_prefix)
+        3    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1149(find_spec)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        4    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+       21    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:844(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2086(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/posixpath.py:144(basename)
+       10    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       21    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_md5}
+        9    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:167(__setitem__)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/_collections_abc.py:657(get)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:85(_path_is_mode_type)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1063(_SubParsersAction)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1722(_add_action)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/enum.py:797(__or__)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:307(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:393(_check_name_wrapper)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'set' objects}
+       32    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISLNK}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1233(_ActionsContainer)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_compile.py:393(_generate_overlap_table)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/os.py:746(decode)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:728(create_module)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(_requires_builtin_wrapper)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1020(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1213(Namespace)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:582(format)
+        3    0.000    0.000    0.001    0.000 /usr/lib/python3.6/gettext.py:626(gettext)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:84(opengroup)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:800(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:736(exec_module)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:780(find_spec)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:94(_path_isfile)
+        3    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        5    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:722(ArgumentError)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1502(_check_conflict)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:573(_metavar_formatter)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:211(__init__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:840(path_stats)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:927(exec_module)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:997(_handle_fromlist)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:41(_relax_case)
+        4    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        3    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        9    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:96(closegroup)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:908(__init__)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:873(__call__)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.6/argparse.py:1742(parse_args)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.6/re.py:169(match)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.6/sre_parse.py:161(__delitem__)
+        4    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        9    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'groups' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha384}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1159(FileType)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1574(_MutuallyExclusiveGroup)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1734(_get_positional_actions)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:118(_AttributeHolder)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
+        4    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        5    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        3    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
+        9    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha512}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:751(Action)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:842(_StoreAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:934(_AppendAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1065(_ChoicesPseudoAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1540(_ArgumentGroup)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2096(_parse_optional)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:669(create_module)
+        1    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:877(_StoreConstAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:971(_AppendConstAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1018(_HelpAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1037(_VersionAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1220(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:1735(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2090(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2321(_check_value)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:209(_Section)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:825(get_filename)
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:650(RawDescriptionHelpFormatter)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:661(RawTextHelpFormatter)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:672(ArgumentDefaultsHelpFormatter)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:689(MetavarTypeHelpFormatter)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:742(ArgumentTypeError)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:900(_StoreTrueAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:917(_StoreFalseAction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:997(_CountAction)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:2199(_get_nargs_pattern)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.6/argparse.py:604(<listcomp>)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:753(is_package)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

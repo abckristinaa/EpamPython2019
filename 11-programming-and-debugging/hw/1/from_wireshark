@@ -1,0 +1,218 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000       127.0.0.1             127.0.0.1             TCP      74     41022 → 5050 [SYN] Seq=0 Win=65495 Len=0 MSS=65495 SACK_PERM=1 TSval=2153482970 TSecr=0 WS=128
+
+Frame 1: 74 bytes on wire (592 bits), 74 bytes captured (592 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.000021       127.0.0.1             127.0.0.1             TCP      74     5050 → 41022 [SYN, ACK] Seq=0 Ack=1 Win=65483 Len=0 MSS=65495 SACK_PERM=1 TSval=2153482970 TSecr=2153482970 WS=128
+
+Frame 2: 74 bytes on wire (592 bits), 74 bytes captured (592 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.000043       127.0.0.1             127.0.0.1             TCP      66     41022 → 5050 [ACK] Seq=1 Ack=1 Win=65536 Len=0 TSval=2153482970 TSecr=2153482970
+
+Frame 3: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.000175       127.0.0.1             127.0.0.1             TCP      85     41022 → 5050 [PSH, ACK] Seq=1 Ack=1 Win=65536 Len=19 TSval=2153482970 TSecr=2153482970
+
+Frame 4: 85 bytes on wire (680 bits), 85 bytes captured (680 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 1, Ack: 1, Len: 19
+Data (19 bytes)
+
+0000  4f 4d 47 60 77 65 6c 63 6f 6d 65 5f 72 65 71 75   OMG`welcome_requ
+0010  65 73 74                                          est
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.000188       127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [ACK] Seq=1 Ack=20 Win=65536 Len=0 TSval=2153482970 TSecr=2153482970
+
+Frame 5: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 1, Ack: 20, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.000385       127.0.0.1             127.0.0.1             TCP      99     5050 → 41022 [PSH, ACK] Seq=1 Ack=20 Win=65536 Len=33 TSval=2153482971 TSecr=2153482970
+
+Frame 6: 99 bytes on wire (792 bits), 99 bytes captured (792 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 1, Ack: 20, Len: 33
+Data (33 bytes)
+
+0000  32 33 60 3e 3e 3e 4f 4d 47 60 20 d0 b2 d0 be d1   23`>>>OMG` .....
+0010  88 d0 b5 d0 bb 20 d0 b2 20 d1 87 d0 b0 d1 82 2e   ..... .. .......
+0020  0a                                                .
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.000405       127.0.0.1             127.0.0.1             TCP      66     41022 → 5050 [ACK] Seq=20 Ack=34 Win=65536 Len=0 TSval=2153482971 TSecr=2153482971
+
+Frame 7: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 20, Ack: 34, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 5.367662       127.0.0.1             127.0.0.1             TCP      75     41022 → 5050 [PSH, ACK] Seq=20 Ack=34 Win=65536 Len=9 TSval=2153488338 TSecr=2153482971
+
+Frame 8: 75 bytes on wire (600 bits), 75 bytes captured (600 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 20, Ack: 34, Len: 9
+Data (9 bytes)
+
+0000  4f 4d 47 60 68 65 6c 6c 6f                        OMG`hello
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 5.411313       127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [ACK] Seq=34 Ack=29 Win=65536 Len=0 TSval=2153488381 TSecr=2153488338
+
+Frame 9: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 34, Ack: 29, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     10 11.340118      127.0.0.1             127.0.0.1             TCP      81     41022 → 5050 [PSH, ACK] Seq=29 Ack=34 Win=65536 Len=15 TSval=2153494310 TSecr=2153488381
+
+Frame 10: 81 bytes on wire (648 bits), 81 bytes captured (648 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 29, Ack: 34, Len: 15
+Data (15 bytes)
+
+0000  4f 4d 47 60 68 6f 77 20 61 72 65 20 79 6f 75      OMG`how are you
+
+No.     Time           Source                Destination           Protocol Length Info
+     11 11.340145      127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [ACK] Seq=34 Ack=44 Win=65536 Len=0 TSval=2153494310 TSecr=2153494310
+
+Frame 11: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 34, Ack: 44, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     12 21.095271      127.0.0.1             127.0.0.1             TCP      87     41022 → 5050 [PSH, ACK] Seq=44 Ack=34 Win=65536 Len=21 TSval=2153504065 TSecr=2153494310
+
+Frame 12: 87 bytes on wire (696 bits), 87 bytes captured (696 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 44, Ack: 34, Len: 21
+Data (21 bytes)
+
+0000  4f 4d 47 60 77 68 61 74 73 20 75 70 2c 20 73 65   OMG`whats up, se
+0010  72 76 65 72 3f                                    rver?
+
+No.     Time           Source                Destination           Protocol Length Info
+     13 21.095299      127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [ACK] Seq=34 Ack=65 Win=65536 Len=0 TSval=2153504065 TSecr=2153504065
+
+Frame 13: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 34, Ack: 65, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     14 25.100949      127.0.0.1             127.0.0.1             TCP      83     41022 → 5050 [PSH, ACK] Seq=65 Ack=34 Win=65536 Len=17 TSval=2153508071 TSecr=2153504065
+
+Frame 14: 83 bytes on wire (664 bits), 83 bytes captured (664 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 65, Ack: 34, Len: 17
+Data (17 bytes)
+
+0000  4f 4d 47 60 61 72 65 20 79 6f 75 20 68 65 72 65   OMG`are you here
+0010  3f                                                ?
+
+No.     Time           Source                Destination           Protocol Length Info
+     15 25.100978      127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [ACK] Seq=34 Ack=82 Win=65536 Len=0 TSval=2153508071 TSecr=2153508071
+
+Frame 15: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 34, Ack: 82, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     16 27.954111      127.0.0.1             127.0.0.1             TCP      76     41022 → 5050 [PSH, ACK] Seq=82 Ack=34 Win=65536 Len=10 TSval=2153510924 TSecr=2153508071
+
+Frame 16: 76 bytes on wire (608 bits), 76 bytes captured (608 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 82, Ack: 34, Len: 10
+Data (10 bytes)
+
+0000  4f 4d 47 60 6f 6e 6c 69 6e 65                     OMG`online
+
+No.     Time           Source                Destination           Protocol Length Info
+     17 27.954143      127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [ACK] Seq=34 Ack=92 Win=65536 Len=0 TSval=2153510924 TSecr=2153510924
+
+Frame 17: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 34, Ack: 92, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     18 27.954318      127.0.0.1             127.0.0.1             TCP      128    5050 → 41022 [PSH, ACK] Seq=34 Ack=92 Win=65536 Len=62 TSval=2153510925 TSecr=2153510924
+
+Frame 18: 128 bytes on wire (1024 bits), 128 bytes captured (1024 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 34, Ack: 92, Len: 62
+Data (62 bytes)
+
+0000  33 36 60 d0 a1 d0 bf d0 b8 d1 81 d0 be d0 ba 20   36`............ 
+0010  d0 bf d0 be d0 bb d1 8c d0 b7 d0 be d0 b2 d0 b0   ................
+0020  d1 82 d0 b5 d0 bb d0 b5 d0 b9 20 d0 be d0 bd d0   .......... .....
+0030  bb d0 b0 d0 b9 d0 bd 3a 0a 60 4f 4d 47 0a         .......:.`OMG.
+
+No.     Time           Source                Destination           Protocol Length Info
+     19 27.954344      127.0.0.1             127.0.0.1             TCP      66     41022 → 5050 [ACK] Seq=92 Ack=96 Win=65536 Len=0 TSval=2153510925 TSecr=2153510925
+
+Frame 19: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 92, Ack: 96, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     20 31.705810      127.0.0.1             127.0.0.1             TCP      71     41022 → 5050 [PSH, ACK] Seq=92 Ack=96 Win=65536 Len=5 TSval=2153514676 TSecr=2153510925
+
+Frame 20: 71 bytes on wire (568 bits), 71 bytes captured (568 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 92, Ack: 96, Len: 5
+Data (5 bytes)
+
+0000  4f 4d 47 60 71                                    OMG`q
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 31.705927      127.0.0.1             127.0.0.1             TCP      66     41022 → 5050 [FIN, ACK] Seq=97 Ack=96 Win=65536 Len=0 TSval=2153514676 TSecr=2153510925
+
+Frame 21: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 97, Ack: 96, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     22 31.705973      127.0.0.1             127.0.0.1             TCP      66     5050 → 41022 [FIN, ACK] Seq=96 Ack=98 Win=65536 Len=0 TSval=2153514676 TSecr=2153514676
+
+Frame 22: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 5050, Dst Port: 41022, Seq: 96, Ack: 98, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     23 31.706008      127.0.0.1             127.0.0.1             TCP      66     41022 → 5050 [ACK] Seq=98 Ack=97 Win=65536 Len=0 TSval=2153514676 TSecr=2153514676
+
+Frame 23: 66 bytes on wire (528 bits), 66 bytes captured (528 bits)
+Ethernet II, Src: 00:00:00_00:00:00 (00:00:00:00:00:00), Dst: 00:00:00_00:00:00 (00:00:00:00:00:00)
+Internet Protocol Version 4, Src: 127.0.0.1, Dst: 127.0.0.1
+Transmission Control Protocol, Src Port: 41022, Dst Port: 5050, Seq: 98, Ack: 97, Len: 0
