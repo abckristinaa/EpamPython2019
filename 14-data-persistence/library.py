@@ -72,13 +72,17 @@ class MongoDB(Storage):
                            "\nЕсли адрес не введен, будет предпринята попытка "
                            "подключения к БД mongodb.net:27017,library. \n"
                            "Чтобы пропустить, нажмите Enter. \n")
-            if client:
-                self.client = pymongo.MongoClient(client)
-                db_name = input("Введите имя базы данных: \n")
-                self.db = self.client[db_name]
-            else:
-                self.client = pymongo.MongoClient('mongodb://kristy:rfvtym3gg@library-shard-00-00-ags0v.mongodb.net:27017,library-shard-00-01-ags0v.mongodb.net:27017,library-shard-00-02-ags0v.mongodb.net:27017/test?ssl=true&replicaSet=library-shard-0&authSource=admin&retryWrites=true&w=majority')
-                self.db = self.client.library
+        if client:
+            self.client = pymongo.MongoClient(client)
+            db_name = input("Введите имя базы данных: \n")
+            self.db = self.client[db_name]
+        else:
+            self.client = pymongo.MongoClient(
+                'mongodb://kristy:rfvtym3gg@library-shard-00-00-ags0v.mongodb.'
+                'net:27017,library-shard-00-01-ags0v.mongodb.net:27017,library'
+                '-shard-00-02-ags0v.mongodb.net:27017/test?ssl=true&replicaSet'
+                '=library-shard-0&authSource=admin&retryWrites=true&w=majority')
+            self.db = self.client.library
 
     def save(self, data, protocol, descriprion: str):
         """ Saves an object to a Mongo db with the given serialization protocol.
