@@ -12,7 +12,7 @@ class Storage(ABC):
         pass
 
     @abstractmethod
-    def read(self, file: str, protocol: str, arg: str):
+    def read(self, file: [str, None], protocol: str, arg: str):
         pass
 
 
@@ -100,7 +100,7 @@ class MongoDB(Storage):
               f"ID документа: {docum_id.inserted_id}\n")
         return docum_id.inserted_id
 
-    def read(self, title: str, protocol: str, doc_id: str = None):
+    def read(self, title: [str, None], protocol: str, doc_id: str = None):
         """ Returns a readable document from Mongo db.
 
         Documents might be found from database depending on the given args.
@@ -109,7 +109,7 @@ class MongoDB(Storage):
         given descriprion.
 
         Args:
-            title (str): A short document title given when saving.
+            title (str, None): A short document title given when saving.
             protocol (str): Pickle or json.
             doc_id (str): Optional, if known.
         Returns:
@@ -147,6 +147,8 @@ class MongoDB(Storage):
 
 
 if __name__ == "__main__":
+
+    # Examples of usage:
     class Foo:
         attr = 'A class attribute'
 
@@ -184,7 +186,8 @@ if __name__ == "__main__":
     library.save(my_data, 'json', 'ins_manyyyy')
     library.save(mylist, 'json', 'ins_many')
 
-    library.read('ins_manyyyy', 'json')  # ID is not given
-    library.read('ins_manyyyy', 'json', '5e173e1721ffc75aba5faa0a')
+    obj1 = library.read('ins_manyyyy', 'json')  # ID is not given
+    obj2 = library.read(None, 'json', '5e173e1721ffc75aba5faa0a')
+    print(obj1, obj2)
 
     library.delete_collection(['pickle', 'json'])
