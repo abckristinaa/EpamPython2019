@@ -100,7 +100,7 @@ class MongoDB(Storage):
               f"ID документа: {docum_id.inserted_id}\n")
         return docum_id.inserted_id
 
-    def read(self, title: str, protocol: str, doc_id: str=None):
+    def read(self, title: str, protocol: str, doc_id: str = None):
         """ Returns a readable document from Mongo db.
 
         Documents might be found from database depending on the given args.
@@ -127,6 +127,11 @@ class MongoDB(Storage):
             unserial = list(collection.find({}, {'_id': 0, title: 1}))
             list_docs = [protocol.loads(i[title]) for i in unserial if i]
             return list_docs
+        else:
+            for i in list(collection.find()):
+                if str(i['_id']) == doc_id:
+                    key = list(i.keys())[1]
+                    return protocol.loads(i[key])
 
     def delete_collection(self, collection_name: [list, str]):
         """ Clear database from the given collections. """
@@ -145,8 +150,21 @@ if __name__ == "__main__":
     class Foo:
         attr = 'A class attribute'
 
-
     my_data = {'key': 'This is an object for JSON and Mongo'}
+    mylist = [
+        {"name": "Amy", "address": "Apple st 652"},
+        {"name": "Hannah", "address": "Mountain 21"},
+        {"name": "Michael", "address": "Valley 345"},
+        {"name": "Sandy", "address": "Ocean blvd 2"},
+        {"name": "Betty", "address": "Green Grass 1"},
+        {"name": "Richard", "address": "Sky st 331"},
+        {"name": "Susan", "address": "One way 98"},
+        {"name": "Vicky", "address": "Yellow Garden 2"},
+        {"name": "Ben", "address": "Park Lane 38"},
+        {"name": "William", "address": "Central st 954"},
+        {"name": "Chuck", "address": "Main Road 989"},
+        {"name": "Viola", "address": "Sideway 1633"}
+    ]
 
     FileStorage.save(Foo, "pickle", "new_file")
     file_pickle_from_storage = FileStorage.read("new_file.pickle", "pickle")
@@ -157,7 +175,16 @@ if __name__ == "__main__":
     file_json_from_storage = FileStorage.read("new_file.json", "json")
     print(file_json_from_storage)
 
+
     library = MongoDB()
-    library.save(my_data, 'pickle', 'test')
-    from_mongo_pickle = library.read("test", 'pickle')
-    print(from_mongo_pickle)
+    library.save(my_data, 'pickle', 'first_data')
+    library.save(mylist, 'pickle', 'first_data')
+    library.save(mylist, 'pickle', 'second_data')
+
+    library.save(my_data, 'json', 'ins_manyyyy')
+    library.save(mylist, 'json', 'ins_many')
+
+    library.read('ins_manyyyy', 'json')  # ID is not given
+    library.read('ins_manyyyy', 'json', '5e173e1721ffc75aba5faa0a')
+
+    library.delete_collection(['pickle', 'json'])
