@@ -1,6 +1,7 @@
 import json
 import pickle
 import pymongo
+from bson.objectid import ObjectId
 import os
 from abc import ABC, abstractmethod
 
@@ -142,10 +143,9 @@ class MongoDB(Storage):
             list_docs = [protocol.loads(i[title]) for i in unserial if i]
             return list_docs
         else:
-            for i in list(collection.find()):
-                if str(i['_id']) == doc_id:
-                    key = list(i.keys())[1]
-                    return protocol.loads(i[key])
+            data = collection.find({'_id': ObjectId(doc_id)})
+            key = list(data[0].keys())[1]
+            return protocol.loads(data[0][key])
 
     def delete_collection(self, collection_name: [list, str]):
         """ Clear database from the given collections. """
