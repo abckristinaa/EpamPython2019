@@ -12,7 +12,7 @@ class Storage(ABC):
         pass
 
     @abstractmethod
-    def read(self, file: str, protocol: str):
+    def read(self, file: str, protocol: str, arg: str):
         pass
 
 
@@ -65,46 +65,80 @@ class FileStorage:
 
 
 class MongoDB(Storage):
-    def __init__(self, client=None):
-        if not client:
-            client = input("\nВведите адрес для соединения с БД Mongo."
-                           "\nЕсли адрес не введен, будет предпринята попытка "
-                           "подключения к БД mongodb.net:27017,library. \n"
-                           "Чтобы пропустить, нажмите Enter. \n")
-        if client:
-            self.client = pymongo.MongoClient(client)
-            db_name = input("Введите имя базы данных: \n")
-            self.db = self.client[db_name]
-        else:
-            self.client = pymongo.MongoClient('mongodb://kristy:rfvtym3gg@library-shard-00-00-ags0v.mongodb.net:27017,library-shard-00-01-ags0v.mongodb.net:27017,library-shard-00-02-ags0v.mongodb.net:27017/test?ssl=true&replicaSet=library-shard-0&authSource=admin&retryWrites=true&w=majority')
-            self.db = self.client.library
+    """ An interface for saving, reading and deletion documents from Mongo ."""
+    def __init__(self):
+        self.client = pymongo.MongoClient('mongodb://kristy:rfvtym3gg@library-shard-00-00-ags0v.mongodb.net:27017,library-shard-00-01-ags0v.mongodb.net:27017,library-shard-00-02-ags0v.mongodb.net:27017/test?ssl=true&replicaSet=library-shard-0&authSource=admin&retryWrites=true&w=majority')
+        self.db = self.client.library
 
-    def save(self, data, protocol, collection_name):
+    def save(self, data, protocol, descriprion: str):
+        """ Saves an object to a Mongo db with the given serialization protocol.
+
+        A protocol name is used as a collection name. Documents within collection
+        is stored as dictionaries {"_id": ID, description: serialized data}
+
+        Args:
+            data: A Python object, which will be saved.
+            protocol (str): Pickle or json.
+            descriprion (str): It is recommended to use a short title that
+                               reflects the content of your document.
+                               Will be used for searching if ID will not be given.
+
+        Returns:
+            docum_id: inserted_id number of saved document.
+        """
         if protocol.lower() == 'json':
-            protocol, key = json, 'json_serial'
+            protocol, collection_name = json, 'json_serial'
         elif protocol.lower() == 'pickle':
-            protocol, key = pickle, 'pickle_serial'
+            protocol, collection_name = pickle, 'pickle_serial'
         else:
             raise ValueError("Unknown protocol")
 
         collection = self.db[collection_name]
-        collection.drop()
-        document_id = collection.insert_one({key: protocol.dumps(data)})
+        docum_id = collection.insert_one({descriprion: protocol.dumps(data)})
         print(f"Данные успешно сохранены в БД Mongo. \n"
               f"Коллекция: '{collection_name}' \n"
-              f"ID документа: {document_id.inserted_id}")
+              f"ID документа: {docum_id.inserted_id}\n")
+        return docum_id.inserted_id
 
-    def read(self, collection_name: str, protocol: str):
+    def read(self, title: str, protocol: str, doc_id: str=None):
+        """ Returns a readable document from Mongo db.
+
+        Documents might be found from database depending on the given args.
+        If ID is given method returns exactly this document.
+        If descriprion given without ID - method returns all documents with the
+        given descriprion.
+
+        Args:
+            title (str): A short document title given when saving.
+            protocol (str): Pickle or json.
+            doc_id (str): Optional, if known.
+        Returns:
+            unserial: a list of unserialized documents.
+        """
         if protocol.lower() == 'json':
-            protocol, key = json, 'json_serial'
+            protocol, collection_name = json, 'json_serial'
         elif protocol.lower() == 'pickle':
-            protocol, key = pickle, 'pickle_serial'
+            protocol, collection_name = pickle, 'pickle_serial'
         else:
             raise ValueError("Unknown protocol")
 
         collection = self.db[collection_name]
-        unserial = list(collection.find())[0][key]
-        return protocol.loads(unserial)
+        if not doc_id:
+            unserial = list(collection.find({}, {'_id': 0, title: 1}))
+            list_docs = [protocol.loads(i[title]) for i in unserial if i]
+            return list_docs
+
+    def delete_collection(self, collection_name: [list, str]):
+        """ Clear database from the given collections. """
+        if isinstance(collection_name, list):
+            for i in collection_name:
+                collection = self.db[i]
+                collection.drop()
+        else:
+            collection = self.db[collection_name]
+            collection.drop()
+
+        print(f"Коллекции {','.join(collection_name)} успешно удалены.")
 
 
 if __name__ == "__main__":
