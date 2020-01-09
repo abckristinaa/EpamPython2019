@@ -1,5 +1,6 @@
 import json
 import pickle
+import pymongo
 import os
 from abc import ABC, abstractmethod
 
@@ -16,10 +17,10 @@ class Storage(ABC):
 
 
 class FileStorage:
-    """ Provides save and read file methods with using serialization. """
+    """ Provides save and read methods with using serialization. """
     @staticmethod
     def save(data, protocol: str, filename: str) -> None:
-        """ Saves a file to a library using the given serialization protocol.
+        """ Saves an object to a library using the given serialization protocol.
 
         Args:
             data: A Python object, which will be saved.
@@ -63,7 +64,46 @@ class FileStorage:
         return data
 
 
+class MongoDB(Storage):
+    def __init__(self, client=None):
+        if not client:
+            client = input("\nВведите адрес для соединения с БД Mongo."
+                           "\nЕсли адрес не введен, будет предпринята попытка "
+                           "подключения к БД mongodb.net:27017,library. \n"
+                           "Чтобы пропустить, нажмите Enter. \n")
+        if client:
+            self.client = pymongo.MongoClient(client)
+            db_name = input("Введите имя базы данных: \n")
+            self.db = self.client[db_name]
+        else:
+            self.client = pymongo.MongoClient('mongodb://kristy:rfvtym3gg@library-shard-00-00-ags0v.mongodb.net:27017,library-shard-00-01-ags0v.mongodb.net:27017,library-shard-00-02-ags0v.mongodb.net:27017/test?ssl=true&replicaSet=library-shard-0&authSource=admin&retryWrites=true&w=majority')
+            self.db = self.client.library
 
+    def save(self, data, protocol, collection_name):
+        if protocol.lower() == 'json':
+            protocol, key = json, 'json_serial'
+        elif protocol.lower() == 'pickle':
+            protocol, key = pickle, 'pickle_serial'
+        else:
+            raise ValueError("Unknown protocol")
+
+        collection = self.db[collection_name]
+        collection.drop()
+        collection.insert_one({key: protocol.dumps(data)})
+        print(f"Данные успешно сохранены в БД Mongo. "
+              f"Коллекция: {collection_name}.")
+
+    def read(self, collection_name: str, protocol: str):
+        if protocol.lower() == 'json':
+            protocol, key = json, 'json_serial'
+        elif protocol.lower() == 'pickle':
+            protocol, key = pickle, 'pickle_serial'
+        else:
+            raise ValueError("Unknown protocol")
+
+        collection = self.db[collection_name]
+        unserial = list(collection.find())[0][key]
+        return protocol.loads(unserial)
 
 
 if __name__ == "__main__":
@@ -81,3 +121,8 @@ if __name__ == "__main__":
     FileStorage.save(my_data, "json", "new_file")
     json_from_storage = FileStorage.read("new_file.json", "json")
     print(json_from_storage)
+
+    library = MongoDB()
+    library.save(my_data, 'pickle', 'test')
+    from_mongo = library.read("test", 'pickle')
+    print(from_mongo)
