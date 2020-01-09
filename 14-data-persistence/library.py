@@ -89,9 +89,10 @@ class MongoDB(Storage):
 
         collection = self.db[collection_name]
         collection.drop()
-        collection.insert_one({key: protocol.dumps(data)})
-        print(f"Данные успешно сохранены в БД Mongo. "
-              f"Коллекция: {collection_name}.")
+        document_id = collection.insert_one({key: protocol.dumps(data)})
+        print(f"Данные успешно сохранены в БД Mongo. \n"
+              f"Коллекция: '{collection_name}' \n"
+              f"ID документа: {document_id.inserted_id}")
 
     def read(self, collection_name: str, protocol: str):
         if protocol.lower() == 'json':
@@ -111,18 +112,18 @@ if __name__ == "__main__":
         attr = 'A class attribute'
 
 
-    my_data = {'key': 'This is an object for JSON'}
+    my_data = {'key': 'This is an object for JSON and Mongo'}
 
     FileStorage.save(Foo, "pickle", "new_file")
-    pickle_from_storage = FileStorage.read("new_file.pickle", "pickle")
-    print(pickle_from_storage)
-    print(pickle_from_storage.attr)
+    file_pickle_from_storage = FileStorage.read("new_file.pickle", "pickle")
+    print(file_pickle_from_storage)
+    print(file_pickle_from_storage.attr)
 
     FileStorage.save(my_data, "json", "new_file")
-    json_from_storage = FileStorage.read("new_file.json", "json")
-    print(json_from_storage)
+    file_json_from_storage = FileStorage.read("new_file.json", "json")
+    print(file_json_from_storage)
 
     library = MongoDB()
     library.save(my_data, 'pickle', 'test')
-    from_mongo = library.read("test", 'pickle')
-    print(from_mongo)
+    from_mongo_pickle = library.read("test", 'pickle')
+    print(from_mongo_pickle)
