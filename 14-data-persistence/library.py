@@ -144,8 +144,11 @@ class MongoDB(Storage):
             return list_docs
         else:
             data = collection.find({'_id': ObjectId(doc_id)})
-            key = list(data[0].keys())[1]
-            return protocol.loads(data[0][key])
+            try:
+                key = list(data[0].keys())[1]
+                return protocol.loads(data[0][key])
+            except IndexError:
+                print(f"Документов с ID {doc_id} не найдено в базе.")
 
     def delete_collection(self, collection_name: [list, str]):
         """ Clear database from the given collections. """
@@ -201,7 +204,7 @@ if __name__ == "__main__":
     library.save(mylist, 'json', 'ins_many')
 
     obj1 = library.read('ins_manyyyy', 'json')  # ID is not given
-    obj2 = library.read(None, 'json', '5e173e1721ffc75aba5faa0a')
+    obj2 = library.read(None, 'json', '5e173e1721ffc75aba5faa0c')
     print(obj1, obj2)
 
     library.delete_collection(['pickle', 'json'])
