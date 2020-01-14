@@ -24,12 +24,14 @@ class Graph:
         return self.visited
 
     def __iter__(self):
-        self.bfs()
+        if not self.visited:
+            self.bfs()
+        else:
+            self.index = -1
         return self
 
     def __next__(self):
         if self.index == len(self.visited) - 1:
-            self.visited = []
             raise StopIteration
         self.index += 1
         return self.visited[self.index]
@@ -41,5 +43,11 @@ E = {'A': ['B', 'C', 'D'],
      'D': ['A']}
 
 graph = Graph(E)
+for vertex in graph:
+    print(vertex)
+
+for vertex in graph:
+    print(vertex)
+
 for vertex in graph:
     print(vertex)
